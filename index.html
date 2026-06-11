@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiv Shakti Interiors | Premium Interior Design Bangalore</title>
+    <meta name="description"
+        content="Premium Interior Design, Modular Kitchens, False Ceilings, and Complete Home Renovation Solutions in Bangalore by Shiv Shakti Interiors.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2B4C7E',
+                        secondary: '#FFB300',
+                        accent: '#0DA19C',
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(43, 76, 126, 0.85) 0%, rgba(13, 161, 156, 0.75) 50%, rgba(255, 179, 0, 0.65) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(74, 111, 181, 0.15);
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid rgba(74, 111, 181, 0.1);
+        }
+
+        .service-card:hover {
+            background: linear-gradient(145deg, #2B4C7E 0%, #0DA19C 100%);
+            color: white;
+        }
+
+        .service-card:hover .service-icon {
+            color: #F5B21A;
+        }
+
+        .service-card:hover h3,
+        .service-card:hover p {
+            color: white;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+        }
+
+        /* Removed nav-scrolled to maintain solid white header */
+
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+        }
+
+        .gold-shimmer {
+            background: linear-gradient(90deg, #F5B21A 0%, #FFD700 50%, #F5B21A 100%);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .stat-number {
+            background: linear-gradient(135deg, #2B4C7E 0%, #0DA19C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+    </style>
+    <base target="_blank">
+</head>
+
+<body class="font-sans text-dark antialiased bg-white">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-white shadow-md">
+        <nav id="navbar" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-secondary rounded shadow-sm overflow-hidden p-1">
+                        <img src="ganesha.jpeg" alt="Ganesha Logo" class="w-full h-full object-contain"
+                            onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Ganesha_Basohli_miniature_circa_1730_Dubost_p73.jpg/800px-Ganesha_Basohli_miniature_circa_1730_Dubost_p73.jpg'">
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-dark text-lg sm:text-xl tracking-tight">SHIV SHAKTI</h1>
+                        <p class="text-[10px] sm:text-xs text-secondary font-bold tracking-widest uppercase mt-[-2px]">
+                            Interiors</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="text-secondary font-semibold border-b-2 border-secondary pb-1">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-secondary font-medium transition-colors">About</a>
+                    <a href="#services"
+                        class="text-gray-600 hover:text-secondary font-medium transition-colors">Services</a>
+                    <a href="#portfolio"
+                        class="text-gray-600 hover:text-secondary font-medium transition-colors">Gallery</a>
+                    <a href="#testimonials"
+                        class="text-gray-600 hover:text-secondary font-medium transition-colors">Reviews</a>
+                </div>
+                <div class="hidden lg:flex items-center">
+                    <a href="#contact"
+                        class="flex items-center gap-2 px-6 py-2.5 bg-secondary text-dark font-bold rounded-md hover:bg-yellow-500 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md">
+                        <i class="far fa-calendar-check"></i> Get Quote
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-dark text-2xl p-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0 top-full">
+            <div class="px-6 py-4 flex flex-col gap-4">
+                <a href="#home" class="text-secondary font-semibold text-lg">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-secondary font-medium text-lg">About</a>
+                <a href="#services" class="text-gray-600 hover:text-secondary font-medium text-lg">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-secondary font-medium text-lg">Gallery</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-secondary font-medium text-lg">Reviews</a>
+                <a href="#contact"
+                    class="flex items-center justify-center gap-2 px-6 py-3 bg-secondary text-dark font-bold rounded-md hover:bg-yellow-500 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md mt-2 text-lg">
+                    <i class="far fa-calendar-check"></i> Get Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Images -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80" alt="Luxury Interior"
+                class="w-full h-full object-cover">
+            <div class="hero-gradient absolute inset-0"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl animate-float"
+            style="animation-delay: 2s;"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-up">
+                <div class="inline-flex flex-col items-center gap-4 mb-8">
+                    <img src="ganesha.png" alt="Lord Ganesha"
+                        class="w-24 h-24 sm:w-32 sm:h-32 object-contain drop-shadow-2xl animate-fade-up"
+                        onerror="this.style.display='none'">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
+                        <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+                        <span class="text-white/90 text-sm font-medium">Bangalore's Trusted Interior Experts</span>
+                    </div>
+                </div>
+                <h1
+                    class="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-6">
+                    Transforming Spaces<br>
+                    <span class="text-secondary">Into Beautiful</span><br>
+                    Experiences
+                </h1>
+                <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Premium Interior Design, Modular Kitchens, False Ceilings, Electrical Works,
+                    and Complete Home Renovation Solutions in Bangalore.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact"
+                        class="px-8 py-4 bg-secondary text-dark font-bold rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl hover:shadow-secondary/50 text-lg">
+                        <i class="fas fa-calendar-check mr-2"></i>Get Free Consultation
+                    </a>
+                    <a href="#portfolio"
+                        class="px-8 py-4 glass text-white font-bold rounded-full hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-300 text-lg">
+                        <i class="fas fa-images mr-2"></i>View Portfolio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-16 glass rounded-2xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold text-secondary">500+</div>
+                    <div class="text-white/80 text-sm mt-1">Projects Done</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold text-secondary">300+</div>
+                    <div class="text-white/80 text-sm mt-1">Happy Clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold text-secondary">10+</div>
+                    <div class="text-white/80 text-sm mt-1">Design Experts</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl sm:text-4xl font-bold text-secondary">100%</div>
+                    <div class="text-white/80 text-sm mt-1">Quality Assured</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/60 hover:text-white transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 bg-light relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="animate-fade-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+                        <i class="fas fa-star text-secondary"></i>
+                        <span class="text-primary font-semibold text-sm">About Us</span>
+                    </div>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-bold mb-6">
+                        Crafting Dream Spaces<br>
+                        <span class="text-primary">Since Years</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Shiv Shakti Interiors specializes in designing elegant and functional residential and commercial
+                        spaces.
+                        From modular kitchens and wardrobes to complete home transformations, we deliver quality
+                        craftsmanship
+                        and innovative design solutions tailored to every client.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-3xl font-bold stat-number mb-1">500+</div>
+                            <div class="text-gray-500 text-sm">Projects Completed</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-3xl font-bold stat-number mb-1">300+</div>
+                            <div class="text-gray-500 text-sm">Happy Clients</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-3xl font-bold stat-number mb-1">10+</div>
+                            <div class="text-gray-500 text-sm">Design Experts</div>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                            <div class="text-3xl font-bold stat-number mb-1">100%</div>
+                            <div class="text-gray-500 text-sm">Quality Assurance</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative animate-fade-up" style="animation-delay: 0.2s;">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+                            alt="Interior Design Work" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-secondary to-yellow-400 rounded-full flex items-center justify-center text-white text-2xl">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark">Award Winning</div>
+                                <div class="text-gray-500 text-sm">Design Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 lg:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full mb-6">
+                    <i class="fas fa-tools text-secondary"></i>
+                    <span class="text-dark font-semibold text-sm">Our Services</span>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold mb-4">
+                    What We <span class="text-primary">Offer</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Comprehensive interior solutions tailored to transform your space into something extraordinary
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Modular Kitchen</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Custom-designed modular kitchens with premium
+                        fittings and smart storage solutions.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up"
+                    style="animation-delay: 0.1s;">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Bedroom Interiors</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Luxurious bedroom designs with wardrobes, lighting,
+                        and decor that reflect your style.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up"
+                    style="animation-delay: 0.2s;">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Living Room Design</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Elegant living spaces with false ceilings,
+                        lighting, and furniture arrangements.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up"
+                    style="animation-delay: 0.3s;">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-border-all"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">False Ceiling & POP</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Creative ceiling designs with LED lighting, cove
+                        lighting, and decorative elements.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Electrical Services</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Complete electrical wiring, lighting installation,
+                        and smart home automation setup.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up"
+                    style="animation-delay: 0.1s;">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-box-archive"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Wardrobes & Storage</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Custom wardrobe designs with sliding doors,
+                        organizers, and premium hardware.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up"
+                    style="animation-delay: 0.2s;">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Commercial Interiors</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Office spaces, retail stores, and commercial
+                        establishments designed for productivity.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card card-hover rounded-2xl p-8 text-center group animate-fade-up"
+                    style="animation-delay: 0.3s;">
+                    <div
+                        class="service-icon w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl transition-colors">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold mb-3">Renovation & Remodeling</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Complete home renovation with civil work, plumbing,
+                        painting, and finishing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 lg:py-32 bg-gradient-to-br from-primary via-primary/95 to-accent/80 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 border-4 border-white rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 border-4 border-white rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 animate-fade-up">
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-4">
+                    Why Choose <span class="text-secondary">Us?</span>
+                </h2>
+                <p class="text-white/80 max-w-2xl mx-auto text-lg">
+                    We bring expertise, quality, and dedication to every project we undertake
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass rounded-2xl p-8 animate-fade-up">
+                    <div
+                        class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">Experienced Team</h3>
+                    <p class="text-white/70 text-sm">Skilled designers and craftsmen with years of industry experience.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 animate-fade-up" style="animation-delay: 0.1s;">
+                    <div
+                        class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-xl mb-4">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">Premium Materials</h3>
+                    <p class="text-white/70 text-sm">Only the finest quality materials sourced from trusted suppliers.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 animate-fade-up" style="animation-delay: 0.2s;">
+                    <div
+                        class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-xl mb-4">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">Affordable Pricing</h3>
+                    <p class="text-white/70 text-sm">Competitive rates without compromising on quality and design.</p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 animate-fade-up">
+                    <div
+                        class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">On-Time Delivery</h3>
+                    <p class="text-white/70 text-sm">Strict adherence to timelines with efficient project management.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 animate-fade-up" style="animation-delay: 0.1s;">
+                    <div
+                        class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">Custom Designs</h3>
+                    <p class="text-white/70 text-sm">Personalized solutions tailored to your taste and requirements.</p>
+                </div>
+
+                <div class="glass rounded-2xl p-8 animate-fade-up" style="animation-delay: 0.2s;">
+                    <div
+                        class="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary text-xl mb-4">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2">End-to-End Execution</h3>
+                    <p class="text-white/70 text-sm">From concept to completion, we handle everything for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 lg:py-32 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+                    <i class="fas fa-images text-primary"></i>
+                    <span class="text-primary font-semibold text-sm">Our Portfolio</span>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold mb-4">
+                    Featured <span class="text-primary">Projects</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Browse through our collection of stunning interior transformations
+                </p>
+            </div>
+
+            <div class="masonry-grid">
+                <div class="masonry-item group cursor-pointer" onclick="openLightbox(this)">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+                            alt="Modern Kitchen"
+                            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-serif text-xl font-bold">Modern Modular Kitchen</h3>
+                                <p class="text-white/80 text-sm">Whitefield, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item group cursor-pointer" onclick="openLightbox(this)">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1616594039964-40891a909d99?w=600&q=80"
+                            alt="Luxury Bedroom"
+                            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-serif text-xl font-bold">Luxury Master Bedroom</h3>
+                                <p class="text-white/80 text-sm">Koramangala, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item group cursor-pointer" onclick="openLightbox(this)">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+                            alt="Living Room"
+                            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-serif text-xl font-bold">Contemporary Living Room</h3>
+                                <p class="text-white/80 text-sm">HSR Layout, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item group cursor-pointer" onclick="openLightbox(this)">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
+                            alt="Office Interior"
+                            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-serif text-xl font-bold">Corporate Office Design</h3>
+                                <p class="text-white/80 text-sm">Electronic City, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item group cursor-pointer" onclick="openLightbox(this)">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80"
+                            alt="False Ceiling"
+                            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-serif text-xl font-bold">Designer False Ceiling</h3>
+                                <p class="text-white/80 text-sm">Marathahalli, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="masonry-item group cursor-pointer" onclick="openLightbox(this)">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=600&q=80"
+                            alt="Wardrobe Design"
+                            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white font-serif text-xl font-bold">Custom Wardrobe</h3>
+                                <p class="text-white/80 text-sm">Indiranagar, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Portfolio Image">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-secondary transition-colors"
+            onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-light to-white opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 animate-fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full mb-6">
+                    <i class="fas fa-comment-dots text-secondary"></i>
+                    <span class="text-dark font-semibold text-sm">Testimonials</span>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold mb-4">
+                    What Our <span class="text-primary">Clients Say</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg border border-gray-100 animate-fade-up">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">"Excellent work and professional execution. The team
+                        understood our vision perfectly and delivered beyond expectations. Highly recommended for anyone
+                        looking for quality interiors."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold">
+                            RK</div>
+                        <div>
+                            <div class="font-bold text-dark">Rahul Kumar</div>
+                            <div class="text-gray-500 text-sm">Whitefield, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg border border-gray-100 animate-fade-up"
+                    style="animation-delay: 0.1s;">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">"Our modular kitchen looks amazing! Great attention to
+                        detail and the finishing is top-notch. Mukesh and his team were very cooperative throughout the
+                        project."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-secondary to-yellow-400 rounded-full flex items-center justify-center text-white font-bold">
+                            SP</div>
+                        <div>
+                            <div class="font-bold text-dark">Sneha Patel</div>
+                            <div class="text-gray-500 text-sm">Koramangala, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card rounded-2xl p-8 shadow-lg border border-gray-100 animate-fade-up"
+                    style="animation-delay: 0.2s;">
+                    <div class="flex gap-1 mb-4">
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">"Completed our home interiors on time and within
+                        budget. The false ceiling work and electrical fittings are flawless. Will definitely recommend
+                        to friends and family."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center text-white font-bold">
+                            AM</div>
+                        <div>
+                            <div class="font-bold text-dark">Arun Mehta</div>
+                            <div class="text-gray-500 text-sm">Marathahalli, Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact"
+        class="py-20 lg:py-32 bg-gradient-to-br from-dark via-gray-900 to-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 animate-fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-6">
+                    <i class="fas fa-phone text-secondary"></i>
+                    <span class="text-white font-semibold text-sm">Contact Us</span>
+                </div>
+                <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-4">
+                    Get Your <span class="text-secondary">Free Quote</span>
+                </h2>
+                <p class="text-white/70 max-w-2xl mx-auto text-lg">
+                    Ready to transform your space? Reach out to us for a free consultation and estimate
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="animate-fade-up">
+                    <div class="glass rounded-2xl p-8 mb-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-secondary to-yellow-400 rounded-full flex items-center justify-center text-white text-2xl">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-white">Mukesh Ray</h3>
+                                <p class="text-white/60">Founder & Lead Designer</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
+                                <div
+                                    class="w-12 h-12 bg-primary/30 rounded-lg flex items-center justify-center text-secondary">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white/60 text-sm">Phone</div>
+                                    <a href="tel:+919606172591"
+                                        class="text-white font-semibold hover:text-secondary transition-colors">+91
+                                        96061 72591</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
+                                <div
+                                    class="w-12 h-12 bg-primary/30 rounded-lg flex items-center justify-center text-secondary">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white/60 text-sm">Email</div>
+                                    <a href="mailto:ray68265@gmail.com"
+                                        class="text-white font-semibold hover:text-secondary transition-colors">ray68265@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
+                                <div
+                                    class="w-12 h-12 bg-primary/30 rounded-lg flex items-center justify-center text-secondary">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white/60 text-sm">Address</div>
+                                    <p class="text-white font-semibold text-sm">No.11/14, Shop No.G2, Ground Floor,
+                                        Kadugodi Main Road, Near Kapoors Chaat Bhandar, Konadasapura Village,
+                                        Bidarahalli(H), Bangalore - 560067</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 mt-8">
+                            <a href="tel:+919606172591"
+                                class="flex-1 py-3 bg-secondary text-dark font-bold rounded-xl text-center hover:bg-white transition-colors">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </a>
+                            <a href="https://wa.me/919606172591" target="_blank"
+                                class="flex-1 py-3 bg-green-500 text-white font-bold rounded-xl text-center hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="animate-fade-up" style="animation-delay: 0.2s;">
+                    <form class="glass rounded-2xl p-8" onsubmit="handleSubmit(event)">
+                        <h3 class="font-serif text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+
+                        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="text-white/80 text-sm mb-2 block">Your Name</label>
+                                <input type="text" required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="text-white/80 text-sm mb-2 block">Phone Number</label>
+                                <input type="tel" required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
+                                    placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="text-white/80 text-sm mb-2 block">Email Address</label>
+                            <input type="email" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
+                                placeholder="john@example.com">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="text-white/80 text-sm mb-2 block">Service Interested In</label>
+                            <select
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all">
+                                <option value="" class="text-dark">Select a service</option>
+                                <option value="kitchen" class="text-dark">Modular Kitchen</option>
+                                <option value="bedroom" class="text-dark">Bedroom Interiors</option>
+                                <option value="living" class="text-dark">Living Room Design</option>
+                                <option value="ceiling" class="text-dark">False Ceiling & POP</option>
+                                <option value="electrical" class="text-dark">Electrical Services</option>
+                                <option value="wardrobe" class="text-dark">Wardrobes & Storage</option>
+                                <option value="commercial" class="text-dark">Commercial Interiors</option>
+                                <option value="renovation" class="text-dark">Renovation & Remodeling</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="text-white/80 text-sm mb-2 block">Your Message</label>
+                            <textarea rows="4" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all resize-none"
+                                placeholder="Tell us about your project requirements..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 gold-shimmer text-dark font-bold rounded-xl hover:shadow-lg hover:shadow-secondary/30 transition-all text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="mt-12 rounded-2xl overflow-hidden shadow-2xl animate-fade-up">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0389!2d77.7286!3d12.9965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0e0d%3A0x0!2zMTLCsDU5JzQ3LjQiTiA3N8KwNDMnNDIuNiJF!5e0!3m2!1sen!2sin!4v1"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="grayscale hover:grayscale-0 transition-all duration-500">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-serif font-bold text-xl">
+                            SS
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold">SHIV SHAKTI</h3>
+                            <p class="text-xs text-white/60 tracking-widest">INTERIORS</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-4">
+                        Transforming spaces into beautiful experiences. Premium interior design solutions for homes and
+                        businesses in Bangalore.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-dark transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-dark transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-dark transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Home</a></li>
+                        <li><a href="#about" class="text-white/60 hover:text-secondary transition-colors text-sm">About
+                                Us</a></li>
+                        <li><a href="#services"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Services</a></li>
+                        <li><a href="#portfolio"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Portfolio</a></li>
+                        <li><a href="#contact"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Modular Kitchen</a>
+                        </li>
+                        <li><a href="#services"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Bedroom
+                                Interiors</a></li>
+                        <li><a href="#services"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">False Ceiling</a>
+                        </li>
+                        <li><a href="#services"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Electrical Work</a>
+                        </li>
+                        <li><a href="#services"
+                                class="text-white/60 hover:text-secondary transition-colors text-sm">Renovation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-lg mb-6">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white/60 text-sm">
+                            <i class="fas fa-phone mt-1 text-secondary"></i>
+                            <span>+91 96061 72591</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 text-sm">
+                            <i class="fas fa-envelope mt-1 text-secondary"></i>
+                            <span>ray68265@gmail.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 text-sm">
+                            <i class="fas fa-location-dot mt-1 text-secondary"></i>
+                            <span>Kadugodi Main Road, Bangalore - 560067</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-sm">© 2025 Shiv Shakti Interiors. All Rights Reserved.</p>
+                <p class="text-white/40 text-sm">Designed with <i class="fas fa-heart text-red-500 mx-1"></i> in
+                    Bangalore</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919606172591" target="_blank"
+        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl whatsapp-float hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-secondary text-dark rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fade-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Lightbox functionality
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+            btn.classList.add('bg-green-500');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.remove('bg-green-500');
+                e.target.reset();
+            }, 3000);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
